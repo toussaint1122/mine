@@ -1,0 +1,53 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-border: hsl(var(--border));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --font-sans: var(--app-font-sans);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+}
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 220 10% 10%;
+  --border: 220 10% 88%;
+  --card: 220 14% 97%;
+  --card-foreground: 220 10% 10%;
+  --muted: 220 14% 95%;
+  --muted-foreground: 220 8% 45%;
+  --primary: 180 100% 35%;
+  --primary-foreground: 0 0% 100%;
+  --app-font-sans: 'Inter', system-ui, sans-serif;
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: 0 0% 4%;
+  --foreground: 0 0% 95%;
+  --border: 0 0% 18%;
+  --card: 0 0% 9%;
+  --card-foreground: 0 0% 95%;
+  --muted: 0 0% 14%;
+  --muted-foreground: 0 0% 60%;
+  --primary: 180 100% 45%;
+  --primary-foreground: 0 0% 5%;
+}
+
+@layer base {
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: hsl(var(--background)); color: hsl(var(--foreground)); font-family: var(--app-font-sans); }
+  a { color: inherit; text-decoration: none; }
+}
